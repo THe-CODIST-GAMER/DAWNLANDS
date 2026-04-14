@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -49,10 +49,9 @@
         .code {
             font-family: 'Courier New', Courier, monospace;
             background: #000;
-            padding: 4px 8px;
+            padding: 2px 6px;
             border-radius: 4px;
             color: #ff9800;
-            font-weight: bold;
         }
         .feature-list {
             list-style: none;
@@ -75,41 +74,11 @@
         .command-table th {
             background-color: #2c2c2c;
         }
-        
-        /* Job Generator Styling */
-        .generator-box {
-            background: #252525;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border: 1px solid #444;
-        }
-        select, button {
-            padding: 10px;
-            border-radius: 4px;
-            border: none;
-            font-size: 1rem;
-        }
-        select {
-            background: #333;
-            color: white;
-            width: 200px;
-            margin-right: 10px;
-        }
-        .copy-btn {
-            background: #4caf50;
-            color: white;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .copy-btn:hover {
-            background: #45a049;
-        }
         .note {
             font-style: italic;
             color: #aaa;
             font-size: 0.9em;
-            margin-top: 10px;
+            margin-bottom: 20px;
             display: block;
         }
         .rules-box {
@@ -145,7 +114,8 @@
         <ul class="feature-list">
             <li>Online 24/7</li>
             <li>Bedrock seamless compatibility (Under Development)</li>
-            <li><strong>AuthMe Protected:</strong> Use <span class="code">/register &lt;password&gt; &lt;password&gt;</span></li>
+            <li><strong>AuthMe Protected:</strong> Use <span class="code">/register &lt;password&gt; &lt;password&gt;</span> on join.</li>
+            <li>Returning players use <span class="code">/login &lt;password&gt;</span></li>
         </ul>
     </section>
 
@@ -165,41 +135,40 @@
                 </tr>
                 <tr>
                     <td><span class="code">/jobs browse</span></td>
-                    <td>View details of all jobs</td>
+                    <td>Browse and join available jobs to earn money</td>
                 </tr>
                 <tr>
                     <td><span class="code">/pay &lt;player&gt;</span></td>
-                    <td>Transfer money to others</td>
+                    <td>Transfer money to another player</td>
+                </tr>
+                <tr>
+                    <td><span class="code">/ah</span></td>
+                    <td>Open the Auction House GUI</td>
+                </tr>
+                <tr>
+                    <td><span class="code">/ah sell &lt;price&gt;</span></td>
+                    <td>List the item in your hand for sale</td>
                 </tr>
             </tbody>
         </table>
-
-        <h3>Quick Join Job</h3>
-        <div class="generator-box">
-            <select id="jobSelect">
-                <option value="Brewer">Brewer</option>
-                <option value="Builder">Builder</option>
-                <option value="Crafter">Crafter</option>
-                <option value="Digger">Digger</option>
-                <option value="Enchanter">Enchanter</option>
-                <option value="Explorer">Explorer</option>
-                <option value="Farmer">Farmer</option>
-                <option value="Fisherman">Fisherman</option>
-                <option value="Hunter">Hunter</option>
-                <option value="Miner">Miner</option>
-            </select>
-            <button class="copy-btn" onclick="copyJobCommand()">Copy Join Command</button>
-            <p style="margin-top:15px;">Command: <span class="code" id="commandPreview">/jobs join Brewer</span></p>
-        </div>
         <span class="note">Note: You are allowed to take up multiple jobs simultaneously.</span>
     </section>
 
     <section>
-        <h2>Land Claiming</h2>
+        <h2>Land Claiming Guide</h2>
+        <ol>
+            <li>Hold a <span class="highlight">Golden Shovel</span>.</li>
+            <li>Right-click two opposite corners of a rectangle.</li>
+            <li>Use a <span class="highlight">Stick</span> to right-click and verify your boundaries.</li>
+        </ol>
+        
+        <h3>Management Commands</h3>
         <ul class="feature-list">
-            <li>Take a <span class="highlight">Golden Shovel</span> and right-click diagonals to claim.</li>
-            <li>Use <span class="code">/trustlist</span> to see who has access to your land.</li>
-            <li>Check <span class="code">/claimlist</span> for your current coordinates.</li>
+            <li><span class="code">/trust &lt;name&gt;</span> - Give a player access to your land</li>
+            <li><span class="code">/trustlist</span> - View everyone trusted on your claim</li>
+            <li><span class="code">/untrust &lt;name&gt;</span> - Revoke access for a player</li>
+            <li><span class="code">/claimlist</span> - View all your claimed lands</li>
+            <li><span class="code">/abandonclaim</span> - Delete current claim</li>
         </ul>
     </section>
 
@@ -217,31 +186,6 @@
         Need help? Contact <strong>Arinjoy</strong> or check the Discord.
     </footer>
 </div>
-
-<script>
-    const jobSelect = document.getElementById('jobSelect');
-    const commandPreview = document.getElementById('commandPreview');
-
-    // Update preview when selection changes
-    jobSelect.addEventListener('change', function() {
-        commandPreview.innerText = '/jobs join ' + this.value;
-    });
-
-    // Copy to clipboard function
-    function copyJobCommand() {
-        const textToCopy = commandPreview.innerText;
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            const btn = document.querySelector('.copy-btn');
-            const originalText = btn.innerText;
-            btn.innerText = 'Copied!';
-            btn.style.background = '#2196F3';
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.style.background = '#4caf50';
-            }, 2000);
-        });
-    }
-</script>
 
 </body>
 </html>
