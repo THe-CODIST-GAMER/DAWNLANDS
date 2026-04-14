@@ -151,6 +151,24 @@
                 </tr>
             </tbody>
         </table>
+     <h3>Quick Join Job</h3>
+        <div class="generator-box">
+            <select id="jobSelect">
+                <option value="Brewer">Brewer</option>
+                <option value="Builder">Builder</option>
+                <option value="Crafter">Crafter</option>
+                <option value="Digger">Digger</option>
+                <option value="Enchanter">Enchanter</option>
+                <option value="Explorer">Explorer</option>
+                <option value="Farmer">Farmer</option>
+                <option value="Fisherman">Fisherman</option>
+                <option value="Hunter">Hunter</option>
+                <option value="Miner">Miner</option>
+            </select>
+            <button class="copy-btn" onclick="copyJobCommand()">Copy Join Command</button>
+            <p style="margin-top:15px;">Command: <span class="code" id="commandPreview">/jobs join Brewer</span></p>
+        </div>
+        
         <span class="note">Note: You are allowed to take up multiple jobs simultaneously.</span>
     </section>
 
