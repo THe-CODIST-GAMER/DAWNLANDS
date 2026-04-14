@@ -91,13 +91,13 @@
         <ul class="feature-list">
             <li>Online 24/7</li>
             <li>Bedrock seamless compatibility (Under Development)</li>
-            <li><strong>AuthMe Protected:</strong> Use <span class="code">/register &lt;password&gt; &lt;password&gt;</span> on your first join.</li>
+            <li><strong>AuthMe Protected:</strong> Use <span class="code">/register &lt;password&gt; &lt;password&gt;</span> on join.</li>
             <li>Returning players use <span class="code">/login &lt;password&gt;</span></li>
         </ul>
     </section>
 
     <section>
-        <h2>Economy & Auction House</h2>
+        <h2>Economy & Jobs</h2>
         <table class="command-table">
             <thead>
                 <tr>
@@ -109,6 +109,10 @@
                 <tr>
                     <td><span class="code">/balance</span></td>
                     <td>View your current money</td>
+                </tr>
+                <tr>
+                    <td><span class="code">/jobs browse</span></td>
+                    <td>Browse and join available jobs to earn money</td>
                 </tr>
                 <tr>
                     <td><span class="code">/pay &lt;player&gt;</span></td>
@@ -130,16 +134,17 @@
         <h2>Land Claiming Guide</h2>
         <ol>
             <li>Hold a <span class="highlight">Golden Shovel</span>.</li>
-            <li>Right-click two opposite corners of a rectangle (ensure they are at the same block level).</li>
-            <li>Use a <span class="highlight">Stick</span> to right-click and verify your boundaries (shown in gold).</li>
+            <li>Right-click two opposite corners of a rectangle.</li>
+            <li>Use a <span class="highlight">Stick</span> to right-click and verify your boundaries.</li>
         </ol>
-        <p><strong>Limit:</strong> Up to 10,000 blocks for free (Min 81 blocks). Use <span class="code">/abandonclaim</span> to start over.</p>
         
-        <h3>Permissions</h3>
+        <h3>Management Commands</h3>
         <ul class="feature-list">
-            <li><span class="code">/trust &lt;name&gt;</span> - Full access for a friend</li>
-            <li><span class="code">/untrust &lt;name&gt;</span> - Revoke access</li>
-            <li><span class="code">/claimlist</span> - View your lands</li>
+            <li><span class="code">/trust &lt;name&gt;</span> - Give a player access to your land</li>
+            <li><span class="code">/trustlist</span> - View everyone trusted on your claim</li>
+            <li><span class="code">/untrust &lt;name&gt;</span> - Revoke access for a player</li>
+            <li><span class="code">/claimlist</span> - View all your claimed lands</li>
+            <li><span class="code">/abandonclaim</span> - Delete current claim</li>
         </ul>
     </section>
 
