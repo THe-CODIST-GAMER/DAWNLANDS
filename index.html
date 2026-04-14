@@ -249,6 +249,30 @@
         Need help? Contact <strong>Arinjoy</strong> or check the Discord.
     </footer>
 </div>
+ <script>
+    const jobSelect = document.getElementById('jobSelect');
+    const commandPreview = document.getElementById('commandPreview');
+
+    // Update preview when selection changes
+    jobSelect.addEventListener('change', function() {
+        commandPreview.innerText = '/jobs join ' + this.value;
+    });
+
+    // Copy to clipboard function
+    function copyJobCommand() {
+        const textToCopy = commandPreview.innerText;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.innerText;
+            btn.innerText = 'Copied!';
+            btn.style.background = '#2196F3';
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.background = '#4caf50';
+            }, 2000);
+        });
+    }
+</script>
 
 </body>
 </html>
